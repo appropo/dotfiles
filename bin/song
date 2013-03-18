@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+# song.sh
+#
+# Prints out the current song played in iTunes
+
+artist=`osascript -e'tell application "iTunes"' -e'get artist of current track' -e'end tell'`
+title=`osascript -e'tell application "iTunes"' -e'get name of current track' -e'end tell'`
+
+echo -e "$artist - \"$title\""
