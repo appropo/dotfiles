@@ -3,7 +3,7 @@ alias ls='ls -G'
 alias ll='ls -lah'
 alias l='ls -lh'
 alias h='history'
-alias du='du -sh'
+alias dul='du -sh *'
 
 # Prompt
 export PS1='\[\e[0;36m\]${text}\u@\h:\w$\[\e[m\] '
