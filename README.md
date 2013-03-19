@@ -1,20 +1,11 @@
 dotfiles
 ========
 
-Speed up the boarding process
-
-Directory structure
--------------------
-
-dotfiles
- bash
- bin
- git
- script
+Speed up the boarding process. The concept of organization is based on Zach Holman's dotfiles at https://github.com/holman/dotfiles.
 
 What happens
 ------------
 
-### bin: binaries
 - the bin folder gets symlinked into your $HOME directory
 - all binaries will be available in global scope when the bash/.bashprofile gets symlinked and $HOME/bin is added to the $PATH environment variable
+- OS X defaults are set

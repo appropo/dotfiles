@@ -32,8 +32,9 @@ link_files () {
 }
 
 # Work to be done
-symlink bash_profile
-symlink bin
+# symlink bash_profile
+# symlink bin
+# set_defaults
 
 # Let's go
 
