@@ -1,0 +1,5 @@
+#!/bin/bash
+#
+# Set auto completion to case insensitive
+
+set completion-ignore-case on
