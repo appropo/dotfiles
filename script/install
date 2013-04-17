@@ -1,0 +1,57 @@
+#!/bin/bash
+#
+# Install dotfiles
+
+# Dotfiles_root, used in other dotfile scripts
+dotfiles_root=`pwd`
+
+# Include dependencies
+source $dotfiles_root/inc/colors.inc
+
+# Abort script if any error occurs
+set -e
+
+# Output functions
+print_info () {
+	printf "\r[$yellow .. $color_off] $1\n"
+}
+
+print_success () {
+	printf "\r[$green OK $color_off] $1\n"
+}
+
+fail () {
+	printf "\r[$red FAIL $color_off] $1\n"
+	echo ''
+	exit
+}
+
+# Helper functions
+create_link () {
+	if [ -L $2 ] || [ -f $2 ]
+	then
+		print_info "remove $2"
+		rm $2
+	elif [ -d $2 ]
+	then
+		print_info "remove $2"
+		rmdir $2
+	fi
+
+	ln -s $1 $2
+	print_success "linked $1 to $2"
+}
+
+# Let's go!
+
+# [1] symlink config files
+create_link $dotfiles_root/config/bash_profile.symlink $HOME/.bash_profile
+create_link $dotfiles_root/config/inputrc.symlink $HOME/.inputrc
+create_link $dotfiles_root/config/vimrc.symlink $HOME/.vimrc
+create_link $dotfiles_root/config/gitconfig.symlink $HOME/.gitconfig
+
+# [2] symlink bin
+create_link $dotfiles_root/bin $HOME/.bin
+
+printf "\n"
+printf "\r$green All installed$color_off\n"
