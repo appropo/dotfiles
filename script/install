@@ -33,6 +33,24 @@ create_link () {
 
 # Let's go!
 
+# [0] Start and prompt for personal information
+print_prompt "Dotfiles will be installed to $dotfiles_root. Go ahead? [yes/no]"
+read confirm
+
+if [[ $confirm != 'yes' ]]
+then
+	fail "aborted"
+fi
+
+print_prompt "Please enter your full name"
+read name
+
+print_prompt "Please enter your email address"
+read email
+
+print_success "Set name to $name"
+print_success "Set email to $email"
+
 # [1] symlink config files
 create_link $dotfiles_root/config/bash_profile.symlink $HOME/.bash_profile
 create_link $dotfiles_root/config/inputrc.symlink $HOME/.inputrc
