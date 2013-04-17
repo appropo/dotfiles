@@ -2,29 +2,18 @@
 #
 # Install dotfiles
 
-# Dotfiles_root, used in other dotfile scripts
+# Set dotfiles_root, used in other dotfile scripts
 dotfiles_root=`pwd`
 
+sed "7s,[^=]*$,$dotfiles_root," $dotfiles_root/config/bash_profile.symlink > $dotfiles_root/config/bash_profile.symlink.tmp
+rm $dotfiles_root/config/bash_profile.symlink
+mv $dotfiles_root/config/bash_profile.symlink.tmp $dotfiles_root/config/bash_profile.symlink
+
 # Include dependencies
-source $dotfiles_root/inc/colors.inc
+source $dotfiles_root/inc/output.inc
 
 # Abort script if any error occurs
 set -e
-
-# Output functions
-print_info () {
-	printf "\r[$yellow .. $color_off] $1\n"
-}
-
-print_success () {
-	printf "\r[$green OK $color_off] $1\n"
-}
-
-fail () {
-	printf "\r[$red FAIL $color_off] $1\n"
-	echo ''
-	exit
-}
 
 # Helper functions
 create_link () {
