@@ -4,7 +4,7 @@
 # is executed when running a login shell
 
 # Dotfiles_root, used in other dotfile scripts
-export dotfiles_root=$HOME/Development/dotfiles
+export dotfiles_root=PATH
 
 # Include dependencies
 source $dotfiles_root/inc/colors.inc
