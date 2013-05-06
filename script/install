@@ -5,9 +5,7 @@
 # Set dotfiles_root, used in other dotfile scripts
 dotfiles_root=`pwd`
 
-sed "7s,[^=]*$,$dotfiles_root," $dotfiles_root/config/bash_profile.symlink > $dotfiles_root/config/bash_profile.symlink.tmp
-rm $dotfiles_root/config/bash_profile.symlink
-mv $dotfiles_root/config/bash_profile.symlink.tmp $dotfiles_root/config/bash_profile.symlink
+sed -i "" -e "7s,[^=]*$,$dotfiles_root," $dotfiles_root/symlinks/bash_profile.symlink
 
 # Include dependencies
 source $dotfiles_root/inc/output.inc
@@ -51,14 +49,17 @@ read email
 print_success "Set name to $name"
 print_success "Set email to $email"
 
-# [1] symlink config files
-create_link $dotfiles_root/config/bash_profile.symlink $HOME/.bash_profile
-create_link $dotfiles_root/config/inputrc.symlink $HOME/.inputrc
-create_link $dotfiles_root/config/vimrc.symlink $HOME/.vimrc
-create_link $dotfiles_root/config/gitconfig.symlink $HOME/.gitconfig
+# [1] symlink symlink files
+create_link $dotfiles_root/symlinks/bash_profile.symlink $HOME/.bash_profile
+create_link $dotfiles_root/symlinks/inputrc.symlink $HOME/.inputrc
+create_link $dotfiles_root/symlinks/vimrc.symlink $HOME/.vimrc
+create_link $dotfiles_root/symlinks/gitconfig.symlink $HOME/.gitconfig
 
-# [2] symlink bin
-create_link $dotfiles_root/bin $HOME/.bin
+# [2] Add name and Email Address to your global git config
+sed -i "" -e "4s,[^=]*$,$name," $dotfiles_root/symlinks/gitconfig.symlink
+sed -i "" -e "5s,[^=]*$,$email," $dotfiles_root/symlinks/gitconfig.symlink
+
+print_success "Added name and email address to your global git config"
 
 printf "\n"
 printf "\r$green All installed$color_off\n"
