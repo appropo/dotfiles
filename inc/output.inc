@@ -7,18 +7,18 @@
 source $dotfiles_root/inc/colors.inc
 
 print_info () {
-	printf "\r[$yellow .. $color_off] $1\n"
+	printf "\r[$iyellow .. $color_off] $1\n"
 }
 
 print_prompt () {
-	printf "\r[$purple >> $color_off] $1: "
+	printf "\r[$ipurple >> $color_off] $1: "
 }
 
 print_success () {
-	printf "\r[$green OK $color_off] $1\n"
+	printf "\r[$igreen OK $color_off] $1\n"
 }
 
 fail () {
-	printf "\r[$red XX $color_off] $1\n"
+	printf "\r[$ired XX $color_off] $1\n"
 	exit
 }
