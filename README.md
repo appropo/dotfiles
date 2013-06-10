@@ -2,13 +2,14 @@
 Speed up the boarding process. The concept of organization is based on Zach Holman's dotfiles at https://github.com/holman/dotfiles.
 
 ## TODO
-- install php from source with mcrypt etc
-- add homebrew installes
-- <del>add subl to PATH</del>
-- <del>remove mysql path export in bash_profile</del>
-- alias `git branch` to `git branch -v`
-- <del>source .bash_profile after installation</del>
-- show branch in prompt when navigating in git repos
+- Install php from source with mcrypt etc
+- Add homebrew installes
+- <del>Add subl to PATH</del>
+- <del>Remove mysql path export in bash_profile</del>
+- Alias `git branch` to `git branch -v`
+- <del>Source .bash_profile after installation</del>
+- Show branch in prompt when navigating in git repos
+- Save developer-specific data in ENV or plain text for updates without prompt
 
 ## Getting started
 1. `$ cd` to the directory you want your dotfiles to live in.
