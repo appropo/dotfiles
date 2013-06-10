@@ -25,14 +25,11 @@ alias hs=my_history
 alias dul='du -sh *'
 
 # Set Environment Variables
-# Path to private binaries
-export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/bin # Path to private binaries
+export PATH=$PATH:/usr/local/sbin # Path to homebrew's sbin
 
 # Prompt
 export PS1="\[$cyan\]\u@\h:\w$\[$color_off\] "
 
 # Colors
 export LSCOLORS=GxFxCxDxBxegedabagaced
-
-# MySQL
-export PATH=$PATH:/usr/local/mysql/bin
