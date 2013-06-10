@@ -49,17 +49,24 @@ read email
 print_success "Set name to $name"
 print_success "Set email to $email"
 
-# [1] symlink symlink files
+# [1] Symlink symlink files
 create_link $dotfiles_root/symlinks/bash_profile.symlink $HOME/.bash_profile
 create_link $dotfiles_root/symlinks/inputrc.symlink $HOME/.inputrc
 create_link $dotfiles_root/symlinks/vimrc.symlink $HOME/.vimrc
 create_link $dotfiles_root/symlinks/gitconfig.symlink $HOME/.gitconfig
 
-# [2] Add name and Email Address to your global git config
+# [2] Symlink Applications
+create_link /Applications/Sublime Text 2 app/Contents/SharedSupport/bin/subl /usr/local/bin/
+
+# [3] Add name and Email Address to your global git config
 sed -i "" -e "4s,[^=]*$,$name," $dotfiles_root/symlinks/gitconfig.symlink
 sed -i "" -e "5s,[^=]*$,$email," $dotfiles_root/symlinks/gitconfig.symlink
 
 print_success "Added name and email address to your global git config"
 
+# [4] Source bash_profile
+source $HOME/.bash_profile
+
 printf "\n"
 printf "\r$green All installed$color_off\n"
+printf "\n"
