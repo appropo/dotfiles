@@ -2,12 +2,12 @@
 Speed up the boarding process. The concept of organization is based on Zach Holman's dotfiles at https://github.com/holman/dotfiles.
 
 ## TODO
+- install php from source with mcrypt etc
 - add homebrew installes
-- add subl to PATH (ln -s "/Applications/Sublime Text 2 app/Contents/SharedSupport/bin/subl" /usr/local/bin/
-)
-- remove mysql path export in bash_profile
+- <del>add subl to PATH</del>
+- <del>remove mysql path export in bash_profile</del>
 - alias `git branch` to `git branch -v`
-- source .bash_profile after installation
+- <del>source .bash_profile after installation</del>
 - show branch in prompt when navigating in git repos
 
 ## Getting started
@@ -15,6 +15,10 @@ Speed up the boarding process. The concept of organization is based on Zach Holm
 2. Clone this repo `$ git clone https://github.com/moritzhaller/dotfiles.git ./.dotfiles`.
 3. Cd to the dotfiles directory `cd ./dotfiles`.
 3. Create symlinks by running `./script/install` and following the instructions.
+
+## Update dotfiles
+1. Cd into your dotfiles root-directory
+2. Run the update script `$ ./script/update`
 
 ## Assumptions
 These dotfiles are ment to work with bash under OSX.
