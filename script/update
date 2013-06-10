@@ -1,0 +1,25 @@
+#!/bin/bash
+#
+# Update dotfiles
+
+# Include dependencies
+source $dotfiles_root/inc/output.inc
+
+# Pull in changes from origin
+print_info "Pull in changes from origin"
+
+git stash
+git pull origin master
+
+print_success "Pulled in changes from origin"
+
+# Re-run install script to build dotfiles
+print_info "Rebuild dotfiles"
+
+$dotfiles_root/script/install
+
+print_success "Rebuilt dotfiles"
+
+printf "\n"
+printf "\r$green All updated$color_off\n"
+printf "\n"
