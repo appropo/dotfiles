@@ -21,3 +21,4 @@
 	standup = log --since '1 day ago' --oneline --author haller@appropo.net
 	st = status -sb
 	ds = diff --staged
+	b = branch -v
