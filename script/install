@@ -42,9 +42,12 @@ fi
 
 print_prompt "Please enter your full name"
 read name
+echo -e "[user]" >> $dotfiles_root/config
+echo -e "\tname = $name" >> $dotfiles_root/config
 
 print_prompt "Please enter your email address"
 read email
+echo -e "\tnemail = $email" >> $dotfiles_root/config
 
 print_success "Set name to $name"
 print_success "Set email to $email"
