@@ -59,7 +59,7 @@ create_link $dotfiles_root/symlinks/vimrc.symlink $HOME/.vimrc
 create_link $dotfiles_root/symlinks/gitconfig.symlink $HOME/.gitconfig
 
 # [2] Symlink Applications
-create_link /Applications/Sublime\ Text\ 2\ app/Contents/SharedSupport/bin/subl /usr/local/bin/
+ln -s /Applications/Sublime\ Text\ 2\ app/Contents/SharedSupport/bin/subl /usr/local/bin/
 
 # [3] Add name and Email Address to your global git config
 sed -i "" -e "4s,[^=]*$,$name," $dotfiles_root/symlinks/gitconfig.symlink
